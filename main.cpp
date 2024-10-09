@@ -251,26 +251,5 @@ int main()
     return 0;
 }
 
-
-
-    // 创建掩码并绘制外轮廓
-    Mat mask = Mat::zeros(src.size(), CV_8UC1);
-    drawContours(mask, contours, -1, Scalar(255), FILLED); // 绘制外轮廓
-
-    // 在掩码图像中查找内轮廓
-    vector<vector<Point>> innerContours;
-    vector<Vec4i> innerHierarchy;
-    findContours(mask, innerContours, innerHierarchy, RETR_TREE, CHAIN_APPROX_SIMPLE);
-          
-    Point2f center_squ;
-    float radius_squ;
-    minEnclosingCircle(innerContours[0], center, radius);
-    circle(src, center, 5, Scalar(255, 255, 255), FILLED); // 绘制圆心
-
-        // 显示结果
-        imshow("Enclosing Circle", result);
-        waitKey(0);
-    }
-
     return 0;
 }
