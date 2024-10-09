@@ -171,12 +171,12 @@ int main()
             // circle(src, center, 5, Scalar(255, 255, 255), FILLED); // 绘制圆心
             
             // // 绘制r与锤子之间的圆形
-            // float distance_1=norm(center_r-center_ham);
-            // float radius=(distance_1-radius_ham-radius_r)/2;
-            // float distance_2=radius_r+radius;
-            // Point2f center;
-            // center.x=center_r.x+(distance_2/distance_1)*(center_ham.x-center_r.x);
-            // center.y=center_r.y+(distance_2/distance_1)*(center_ham.y-center_r.y);
+            float distance_1=norm(center_r-center_ham);
+            float radius=(distance_1-radius_ham-radius_r)/2;
+            float distance_2=radius_r+radius;
+            Point2f center;
+            center.x=center_r.x+(distance_2/distance_1)*(center_ham.x-center_r.x);
+            center.y=center_r.y+(distance_2/distance_1)*(center_ham.y-center_r.y);
             // circle(src,center,radius,Scalar(255,255,255),2);
             
             if(count==0){
